@@ -7,12 +7,19 @@ const Footer = () => {
 		<Container
 			sx={{
 				textAlign: "center",
+				position: "fixed",
+				bottom: 0,
+				left: 0,
+				right: 0,
+				width: "100%",
 			}}
 		>
 			<Typography variant="body2" color="text.secondary">
 				{"Copyright © "}
 				<Link color="inherit" href="mailto:debajitdeb11@gmail.com">
+					<strong>
 					Debajit Deb
+					</strong>
 				</Link>{" "}
 				{new Date().getFullYear()}
 				{"."}
