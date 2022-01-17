@@ -1,5 +1,4 @@
-import {FIREBASE_API_KEY} from "../backend"
-
+import { FIREBASE_API_KEY } from "../backend";
 
 export const firebaseConfig = {
 	apiKey: FIREBASE_API_KEY,

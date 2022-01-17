@@ -1,5 +1,13 @@
 /* eslint-disable no-unused-vars */
-import { TextField, Box, Typography, Button, Container, Snackbar, Alert } from "@mui/material";
+import {
+	TextField,
+	Box,
+	Typography,
+	Button,
+	Container,
+	Snackbar,
+	Alert,
+} from "@mui/material";
 import React, { useContext, useState } from "react";
 import Header from "../Components/Header";
 import LockIcon from "@mui/icons-material/Lock";
@@ -41,7 +49,7 @@ const Signin = () => {
 					uid: user.uid,
 				});
 
-				console.log(user);
+				// console.log(user);
 
 				setMessage("Redirecting to /");
 				setSnackbarType("success");

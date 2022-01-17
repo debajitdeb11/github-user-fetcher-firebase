@@ -14,6 +14,8 @@ import Header from "../Components/Header";
 import { UserContext } from "../context/UserContext";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Navigate } from "react-router-dom";
+import Footer from "../Components/Footer";
+
 
 const Signup = () => {
 	const context = useContext(UserContext);
@@ -47,7 +49,7 @@ const Signup = () => {
 					email: user.email,
 					uid: user.uid,
 				});
-				console.log(userCredential);
+				// console.log(userCredential);
 
 				setMessage("Redirecting to /");
 				setSnackbarType("success");
@@ -162,6 +164,7 @@ const Signup = () => {
 						Sign up
 					</Button>
 				</Box>
+				<Footer />
 			</Container>
 		);
 };
