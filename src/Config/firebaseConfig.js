@@ -1,5 +1,8 @@
+import {FIREBASE_API_KEY} from "../backend"
+
+
 export const firebaseConfig = {
-	apiKey: "AIzaSyADPYu0Z0GUsV83rRgPlsi62I2aSfHQmHQ",
+	apiKey: FIREBASE_API_KEY,
 	authDomain: "my-git-app-6ef3f.firebaseapp.com",
 	projectId: "my-git-app-6ef3f",
 	storageBucket: "my-git-app-6ef3f.appspot.com",
