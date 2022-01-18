@@ -41,7 +41,7 @@ const RepoCard = ({ repo_url }) => {
 								>
 									<Card
 										sx={{
-											bgcolor: "#b1d0e0",
+											bgcolor: "#eeeeee",
 										}}
 										variant="outlined"
 									>
