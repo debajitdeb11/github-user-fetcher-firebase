@@ -33,19 +33,20 @@ const Home = () => {
 	};
 
 	if (!context.user?.uid) {
-		return <Navigate to="/signin" replace />
-	} else return (
-		<Container>
-			<Header />
-			<SearchBar
-				onSearch={() =>  handleQuery()}
-				setQuery={setQuery}
-				query={query}
-			/>
-			{user ? <UserCard user={user} /> : <></>}
-			<Footer />
-		</Container>
-	);
+		return <Navigate to="/signin" replace />;
+	} else
+		return (
+			<Container>
+				<Header />
+				<SearchBar
+					onSearch={() => handleQuery()}
+					setQuery={setQuery}
+					query={query}
+				/>
+				{user ? <UserCard user={user} /> : <></>}
+				<Footer />
+			</Container>
+		);
 };
 
 export default Home;

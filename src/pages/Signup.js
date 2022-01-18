@@ -16,7 +16,6 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Navigate } from "react-router-dom";
 import Footer from "../Components/Footer";
 
-
 const Signup = () => {
 	const context = useContext(UserContext);
 	const [email, setEmail] = useState("");

@@ -28,13 +28,12 @@ const UserCard = ({ user }) => {
 		});
 
 		// setRepoUrl(repos_url);
-
 	}, [name]);
 
 	return (
 		<Grid container columnSpacing={1}>
 			<Grid item sm={4} xs="auto">
-				<Box display="grid" >
+				<Box display="grid">
 					<Avatar
 						src={userData.avatar}
 						sx={{
@@ -80,13 +79,12 @@ const UserCard = ({ user }) => {
 				>
 					Public Repositories:
 				</Typography>
-				
-				{
-					userData.repos_url ? (
-				<RepoCard repo_url={userData.repos_url} />
-					) : (<></>)
-				}
-				
+
+				{userData.repos_url ? (
+					<RepoCard repo_url={userData.repos_url} />
+				) : (
+					<></>
+				)}
 			</Grid>
 		</Grid>
 	);

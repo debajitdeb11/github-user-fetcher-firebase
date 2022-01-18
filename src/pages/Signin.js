@@ -43,7 +43,7 @@ const Signin = () => {
 			.then((userCredential) => {
 				// Signed In
 
-				const {uid, email} = userCredential.user;
+				const { uid, email } = userCredential.user;
 				context.setUser({
 					email: email,
 					uid: uid,
@@ -62,9 +62,9 @@ const Signin = () => {
 	};
 
 	const handleSubmit = (e) => {
-		e.preventDefault()
+		e.preventDefault();
 		handleSignin();
-	}
+	};
 
 	const handleClose = (event, reason) => {
 		if (reason === "clickaway") {
