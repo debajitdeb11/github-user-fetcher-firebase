@@ -12,7 +12,7 @@ const Header = () => {
 		const auth = getAuth();
 		signOut(auth)
 			.then(() => {
-				console.log("Signout Success");
+				// console.log("Signout Success");
 				context.setUser(null);
 			})
 			.catch(() => {

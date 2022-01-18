@@ -10,14 +10,14 @@ const UserCard = ({ user }) => {
 		avatar: "#",
 		location: "ABC",
 		hireable: false,
-		repos_url: "",
+		repos_url: null,
 	});
 
-	const [repoUrl, setRepoUrl] = useState(null);
+	// const [repoUrl, setRepoUrl] = useState(null);
 
 	const { avatar_url, name, location, hireable, repos_url } = user;
 
-	useEffect(async () => {
+	useEffect(() => {
 		setUserData({
 			...userData,
 			name: name,
@@ -27,7 +27,7 @@ const UserCard = ({ user }) => {
 			location: location,
 		});
 
-		setRepoUrl(repos_url)
+		// setRepoUrl(repos_url);
 
 	}, [name]);
 
@@ -82,8 +82,8 @@ const UserCard = ({ user }) => {
 				</Typography>
 				
 				{
-					repos_url ? (
-				<RepoCard repo_url={repoUrl} />
+					userData.repos_url ? (
+				<RepoCard repo_url={userData.repos_url} />
 					) : (<></>)
 				}
 				

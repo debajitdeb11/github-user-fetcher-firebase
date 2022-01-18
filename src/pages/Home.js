@@ -24,7 +24,7 @@ const Home = () => {
 			user = await fetchUser(query);
 			// console.log(user);
 			setUser(user);
-			setQuery("");
+			// setQuery("");
 			// const gitRepos = await fetchRepo(user.repos_url);
 			// setRepos(gitRepos);
 		} catch (e) {
@@ -38,7 +38,7 @@ const Home = () => {
 		<Container>
 			<Header />
 			<SearchBar
-				onSearch={() => handleQuery()}
+				onSearch={() =>  handleQuery()}
 				setQuery={setQuery}
 				query={query}
 			/>

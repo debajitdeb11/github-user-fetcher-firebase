@@ -43,16 +43,11 @@ const Signin = () => {
 			.then((userCredential) => {
 				// Signed In
 
-				const user = userCredential.user;
+				const {uid, email} = userCredential.user;
 				context.setUser({
-					email: user.email,
-					uid: user.uid,
+					email: email,
+					uid: uid,
 				});
-
-				// console.log(user);
-
-				setMessage("Redirecting to /");
-				setSnackbarType("success");
 			})
 			.catch((error) => {
 				const errorCode = error.code;
@@ -65,6 +60,11 @@ const Signin = () => {
 				setDisplaySnackBar(true);
 			});
 	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		handleSignin();
+	}
 
 	const handleClose = (event, reason) => {
 		if (reason === "clickaway") {
@@ -159,7 +159,7 @@ const Signin = () => {
 						color="secondary"
 						size="large"
 						aria-label="signin"
-						onClick={() => handleSignin()}
+						onClick={(e) => handleSubmit(e)}
 					>
 						Sign in
 					</Button>

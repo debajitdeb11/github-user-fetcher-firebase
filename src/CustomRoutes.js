@@ -10,8 +10,7 @@ import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./Config/firebaseConfig";
 
 // init firebase
-const app = initializeApp(firebaseConfig);
-console.log(app);
+initializeApp(firebaseConfig);
 
 const CustomRoutes = () => {
 	const [user, setUser] = useState(null);
