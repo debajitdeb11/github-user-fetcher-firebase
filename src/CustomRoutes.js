@@ -22,7 +22,8 @@ const CustomRoutes = () => {
 					<Route path="/" element={<Home />} />
 					<Route path="/signin" element={<Signin />} />
 					<Route path="/signup" element={<Signup />} />
-					<Route path="*" element={<PageNotFound />} />
+					<Route path="/error" element={<PageNotFound />} />
+					<Route path="/*" element={<PageNotFound />} />
 				</Routes>
 			</UserContext.Provider>
 		</Router>
