@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Grid, Avatar, Box, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import RepoCard from "./RepoCard";
+import { Grid, Avatar, Box, Typography } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import RepoCard from './RepoCard';
 
 const UserCard = ({ user }) => {
 	const [userData, setUserData] = useState({
-		name: "XYZ",
-		avatar: "#",
-		location: "ABC",
+		name: 'XYZ',
+		avatar: '#',
+		location: 'ABC',
 		hireable: false,
 		repos_url: null,
 	});
@@ -37,8 +37,8 @@ const UserCard = ({ user }) => {
 					<Avatar
 						src={userData.avatar}
 						sx={{
-							height: "300px",
-							width: "300px",
+							height: '300px',
+							width: '300px',
 						}}
 					/>
 
@@ -46,7 +46,7 @@ const UserCard = ({ user }) => {
 						variant="h2"
 						component="h1"
 						fontSize={30}
-						sx={{ mt: 2, color: "#041C32" }}
+						sx={{ mt: 2, color: '#041C32' }}
 					>
 						{userData.name}
 					</Typography>
@@ -54,7 +54,7 @@ const UserCard = ({ user }) => {
 					<Typography
 						variant="body1"
 						component="h1"
-						sx={{ mt: 2, color: "#04293A" }}
+						sx={{ mt: 2, color: '#04293A' }}
 					>
 						Location:
 						{userData.location}
@@ -63,10 +63,10 @@ const UserCard = ({ user }) => {
 					<Typography
 						variant="body1"
 						component="h1"
-						sx={{ mt: 2, color: "#064663" }}
+						sx={{ mt: 2, color: '#064663' }}
 					>
 						Hireable:
-						{userData.hireable ? "Yes" : "No"}
+						{userData.hireable ? 'Yes' : 'No'}
 					</Typography>
 				</Box>
 			</Grid>
@@ -75,16 +75,11 @@ const UserCard = ({ user }) => {
 				<Typography
 					variant="h4"
 					component="h1"
-					sx={{ mt: 2, color: "#325288" }}
+					sx={{ mt: 2, color: '#325288' }}
 				>
 					Public Repositories:
 				</Typography>
-
-				{userData.repos_url ? (
-					<RepoCard repo_url={userData.repos_url} />
-				) : (
-					<></>
-				)}
+				{userData.repos_url && <RepoCard repo_url={userData.repos_url} />}
 			</Grid>
 		</Grid>
 	);

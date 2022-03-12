@@ -7,27 +7,27 @@ import {
 	Container,
 	Snackbar,
 	Alert,
-} from "@mui/material";
-import React, { useContext, useState } from "react";
-import Header from "../Components/Header";
-import LockIcon from "@mui/icons-material/Lock";
-import { UserContext } from "../context/UserContext";
-import { Navigate } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import Footer from "../Components/Footer";
+} from '@mui/material';
+import React, { useContext, useState } from 'react';
+import Header from '../Components/Header';
+import LockIcon from '@mui/icons-material/Lock';
+import { UserContext } from '../context/UserContext';
+import { Navigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import Footer from '../Components/Footer';
 
 const Signin = () => {
 	const context = useContext(UserContext);
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [displaySnackBar, setDisplaySnackBar] = useState(false);
-	const [message, setMessage] = useState("");
-	const [snackbarType, setSnackbarType] = useState("success");
+	const [message, setMessage] = useState('');
+	const [snackbarType, setSnackbarType] = useState('success');
 
 	const handleChange = (e) => {
 		const { id, value } = e.target;
 
-		if (id === "email") {
+		if (id === 'email') {
 			setEmail(value);
 		} else {
 			setPassword(value);
@@ -54,7 +54,7 @@ const Signin = () => {
 				const errorMessage = error.message;
 
 				setMessage(errorMessage);
-				setSnackbarType("error");
+				setSnackbarType('error');
 			})
 			.finally(() => {
 				setDisplaySnackBar(true);
@@ -67,7 +67,7 @@ const Signin = () => {
 	};
 
 	const handleClose = (event, reason) => {
-		if (reason === "clickaway") {
+		if (reason === 'clickaway') {
 			return;
 		}
 
@@ -83,17 +83,17 @@ const Signin = () => {
 				<Box
 					component="form"
 					sx={{
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "center",
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
 					}}
 				>
 					<LockIcon
 						color="secondary"
 						sx={{
-							height: "64px",
-							width: "64px",
-							margin: "5px",
+							height: '64px',
+							width: '64px',
+							margin: '5px',
 						}}
 					/>
 
@@ -101,7 +101,7 @@ const Signin = () => {
 						variant="h4"
 						component="h1"
 						sx={{
-							color: "#6867AC",
+							color: '#6867AC',
 						}}
 					>
 						Sign in
@@ -109,8 +109,8 @@ const Signin = () => {
 
 					<Snackbar
 						anchorOrigin={{
-							vertical: "top",
-							horizontal: "center",
+							vertical: 'top',
+							horizontal: 'center',
 						}}
 						open={displaySnackBar}
 						autoHideDuration={3000}
@@ -119,7 +119,7 @@ const Signin = () => {
 						<Alert
 							onClose={handleClose}
 							severity={snackbarType}
-							sx={{ width: "100%" }}
+							sx={{ width: '100%' }}
 						>
 							{message}
 						</Alert>
@@ -134,8 +134,8 @@ const Signin = () => {
 						color="secondary"
 						onChange={handleChange}
 						sx={{
-							marginTop: "0.8rem",
-							marginBottom: "0.3rem",
+							marginTop: '0.8rem',
+							marginBottom: '0.3rem',
 						}}
 					/>
 					<TextField
@@ -146,14 +146,14 @@ const Signin = () => {
 						type="password"
 						onChange={handleChange}
 						sx={{
-							marginTop: "0.8rem",
-							marginBottom: "0.3rem",
+							marginTop: '0.8rem',
+							marginBottom: '0.3rem',
 						}}
 					/>
 
 					<Button
 						sx={{
-							marginTop: "1rem",
+							marginTop: '1rem',
 						}}
 						variant="contained"
 						color="secondary"

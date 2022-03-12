@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState } from "react";
+import React, { useContext, useState } from 'react';
 import {
 	TextField,
 	Box,
@@ -8,26 +8,26 @@ import {
 	Container,
 	Snackbar,
 	Alert,
-} from "@mui/material";
-import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
-import Header from "../Components/Header";
-import { UserContext } from "../context/UserContext";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { Navigate } from "react-router-dom";
-import Footer from "../Components/Footer";
+} from '@mui/material';
+import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+import Header from '../Components/Header';
+import { UserContext } from '../context/UserContext';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { Navigate } from 'react-router-dom';
+import Footer from '../Components/Footer';
 
 const Signup = () => {
 	const context = useContext(UserContext);
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [displaySnackBar, setDisplaySnackBar] = useState(false);
-	const [message, setMessage] = useState("");
-	const [snackbarType, setSnackbarType] = useState("success");
+	const [message, setMessage] = useState('');
+	const [snackbarType, setSnackbarType] = useState('success');
 
 	const handleChange = (e) => {
 		const { id, value } = e.target;
 
-		if (id === "email") {
+		if (id === 'email') {
 			setEmail(value);
 		} else {
 			setPassword(value);
@@ -50,15 +50,15 @@ const Signup = () => {
 				});
 				// console.log(userCredential);
 
-				setMessage("Redirecting to /");
-				setSnackbarType("success");
+				setMessage('Redirecting to /');
+				setSnackbarType('success');
 			})
 			.catch((error) => {
 				const errorCode = error.code;
 				const errorMessage = error.message;
 				// console.log(errorMessage);
 				setMessage(errorMessage);
-				setSnackbarType("error");
+				setSnackbarType('error');
 			})
 			.finally(() => {
 				setDisplaySnackBar(true);
@@ -66,7 +66,7 @@ const Signup = () => {
 	};
 
 	const handleClose = (event, reason) => {
-		if (reason === "clickaway") {
+		if (reason === 'clickaway') {
 			return;
 		}
 
@@ -82,24 +82,24 @@ const Signup = () => {
 				<Box
 					component="form"
 					sx={{
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "center",
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
 					}}
 				>
 					<AccountCircleRoundedIcon
 						color="secondary"
 						sx={{
-							height: "64px",
-							width: "64px",
-							margin: "5px",
+							height: '64px',
+							width: '64px',
+							margin: '5px',
 						}}
 					/>
 
 					<Snackbar
 						anchorOrigin={{
-							vertical: "top",
-							horizontal: "center",
+							vertical: 'top',
+							horizontal: 'center',
 						}}
 						open={displaySnackBar}
 						autoHideDuration={3000}
@@ -108,7 +108,7 @@ const Signup = () => {
 						<Alert
 							onClose={handleClose}
 							severity={snackbarType}
-							sx={{ width: "100%" }}
+							sx={{ width: '100%' }}
 						>
 							{message}
 						</Alert>
@@ -118,7 +118,7 @@ const Signup = () => {
 						variant="h4"
 						component="h1"
 						sx={{
-							color: "#6867AC",
+							color: '#6867AC',
 						}}
 					>
 						Sign up
@@ -133,8 +133,8 @@ const Signup = () => {
 						color="secondary"
 						onChange={handleChange}
 						sx={{
-							marginTop: "0.8rem",
-							marginBottom: "0.3rem",
+							marginTop: '0.8rem',
+							marginBottom: '0.3rem',
 						}}
 					/>
 					<TextField
@@ -145,14 +145,14 @@ const Signup = () => {
 						type="password"
 						onChange={handleChange}
 						sx={{
-							marginTop: "0.8rem",
-							marginBottom: "0.3rem",
+							marginTop: '0.8rem',
+							marginBottom: '0.3rem',
 						}}
 					/>
 
 					<Button
 						sx={{
-							marginTop: "1rem",
+							marginTop: '1rem',
 						}}
 						variant="contained"
 						color="secondary"

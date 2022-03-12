@@ -1,18 +1,18 @@
 /* eslint-disable no-unused-vars */
-import { Container } from "@mui/material";
-import React, { useContext, useState } from "react";
-import { Navigate } from "react-router-dom";
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
-import SearchBar from "../Components/SearchBar";
-import UserCard from "../Components/UserCard";
-import { UserContext } from "../context/UserContext";
-import { fetchUser, fetchRepo } from "../helper/apicalls";
+import { Container } from '@mui/material';
+import React, { useContext, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import Footer from '../Components/Footer';
+import Header from '../Components/Header';
+import SearchBar from '../Components/SearchBar';
+import UserCard from '../Components/UserCard';
+import { UserContext } from '../context/UserContext';
+import { fetchUser, fetchRepo } from '../helper/apicalls';
 
 const Home = () => {
 	const context = useContext(UserContext);
 
-	const [query, setQuery] = useState("");
+	const [query, setQuery] = useState('');
 
 	const [user, setUser] = useState(null);
 	// const [repos, setRepos] = useState([]);
@@ -43,7 +43,7 @@ const Home = () => {
 					setQuery={setQuery}
 					query={query}
 				/>
-				{user ? <UserCard user={user} /> : <></>}
+				{user && <UserCard user={user} />}
 				<Footer />
 			</Container>
 		);
