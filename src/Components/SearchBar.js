@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Button, Box, TextField } from "@mui/material";
-import React from "react";
+import { Button, Box, TextField } from '@mui/material';
+import React from 'react';
 
 const SearchBar = ({ onSearch, query, setQuery }) => {
 	const handleChange = (e) => {
@@ -33,7 +33,7 @@ const SearchBar = ({ onSearch, query, setQuery }) => {
 				onClick={(e) => {
 					e.preventDefault();
 					onSearch();
-					setQuery("");
+					setQuery('');
 				}}
 			>
 				Search

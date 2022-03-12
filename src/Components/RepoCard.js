@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
 	Box,
 	Card,
@@ -9,9 +9,9 @@ import {
 	CardActions,
 	Grid,
 	Link,
-} from "@mui/material";
+} from '@mui/material';
 
-import { fetchRepo } from "../helper/apicalls";
+import { fetchRepo } from '../helper/apicalls';
 
 const RepoCard = ({ repo_url }) => {
 	const [repos, setRepos] = useState([]);
@@ -41,7 +41,7 @@ const RepoCard = ({ repo_url }) => {
 								>
 									<Card
 										sx={{
-											bgcolor: "#eeeeee",
+											bgcolor: '#616A6B',
 										}}
 										variant="outlined"
 									>
@@ -63,14 +63,14 @@ const RepoCard = ({ repo_url }) => {
 												<Typography variant="body2">
 													{description
 														? description.length > 10
-															? description.slice(0, 30)
+															? description.slice(0, 30) + '...'
 															: description
-														: ""}
+														: ''}
 												</Typography>
 											</CardContent>
 											<CardActions>
 												<Link
-													href={html_url ? html_url : "#"}
+													href={html_url ? html_url : '#'}
 													underline="none"
 													color="black"
 												>

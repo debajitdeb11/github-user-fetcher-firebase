@@ -1,17 +1,17 @@
-import { Button, Container } from "@mui/material";
-import React from "react";
-import error from "../assets/error.png";
-import Footer from "../Components/Footer";
+import { Button, Container } from '@mui/material';
+import React from 'react';
+import error from '../assets/error.png';
+import Footer from '../Components/Footer';
 
 const PageNotFound = () => {
 	return (
 		<Container
 			fixed
 			sx={{
-				display: "flex",
-				flexDirection: "column",
-				textAlign: "center",
-				alignContent: "center",
+				display: 'flex',
+				flexDirection: 'column',
+				textAlign: 'center',
+				alignContent: 'center',
 			}}
 		>
 			<img src={error} />
